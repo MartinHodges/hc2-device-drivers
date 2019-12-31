@@ -1,0 +1,40 @@
+#!/bin/bash
+
+echo
+echo Setting up device registration
+echo
+echo Set up Presence devices
+curl -X POST "http://localhost:5050/api/v1/devices" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"address\": \"0020\",\
+\"name\": \"Presence Detector\", \
+\"type\": \"presence\"}"
+
+echo
+echo Set up Temperature devices
+curl -X POST "http://localhost:5050/api/v1/devices" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"address\": \"0030\",\
+\"name\": \"Temperature Sensor\", \
+\"type\": \"temperature\"}"
+
+echo
+echo Set up Light devices
+curl -X POST "http://localhost:5050/api/v1/devices" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"address\": \"0040\",\
+\"name\": \"Light Sensor\", \
+\"type\": \"lightSensor\"}"
+
+echo
+echo Set up Power devices
+curl -X POST "http://localhost:5050/api/v1/devices" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"address\": \"0050\",\
+\"name\": \"Power Switch\", \
+\"type\": \"powerSwitch\"}"
+
+echo
+echo
+echo Device set up complete
+echo

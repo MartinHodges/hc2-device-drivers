@@ -1,0 +1,40 @@
+#!/bin/bash
+
+echo
+echo Setting up device driver types
+echo
+echo Set up Presence device driver
+curl -X POST "http://localhost:5050/device-types" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"driverClass\": \"com.robocrank.hcpresence.HcPresenceDevice\",\
+\"driverLocation\": \"hcPresence/target/hcPresence-0.0.1-SNAPSHOT.jar\", \
+\"type\": \"presence\"}"
+
+echo
+echo Set up Temperature device driver
+curl -X POST "http://localhost:5050/device-types" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"driverClass\": \"com.robocrank.hctemperature.HcTemperatureDevice\",\
+\"driverLocation\": \"hcTemperature/target/hcTemperature-0.0.1-SNAPSHOT.jar\", \
+\"type\": \"temperature\"}"
+
+echo
+echo Set up Light device driver
+curl -X POST "http://localhost:5050/device-types" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"driverClass\": \"com.robocrank.hclight.HcLightDevice\",\
+\"driverLocation\": \"hcLight/target/hcLight-0.0.1-SNAPSHOT.jar\", \
+\"type\": \"lightSensor\"}"
+
+echo
+echo Set up Power device driver
+curl -X POST "http://localhost:5050/device-types" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"driverClass\": \"com.robocrank.hcdevice.HcPowerDevice\",\
+\"driverLocation\": \"hcPower/target/hcPower-0.0.1-SNAPSHOT.jar\", \
+\"type\": \"powerSwitch\"}"
+
+echo
+echo
+echo Driver set up complete
+echo

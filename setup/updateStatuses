@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo
+echo Setting up initial device status
+echo
+echo Update Presence devices
+curl -X POST "http://localhost:5050/api/v1/devices/status-updates/0020" -H "accept: */*" -H "Content-Type: application/json" -d \
+"9,G,1,0.0"
+
+echo
+echo Update Temperature devices
+curl -X POST "http://localhost:5050/api/v1/devices/status-updates/0030" -H "accept: */*" -H "Content-Type: application/json" -d \
+"9,G,0,23.5"
+
+echo
+echo Update Light devices
+curl -X POST "http://localhost:5050/api/v1/devices/status-updates/0040" -H "accept: */*" -H "Content-Type: application/json" -d \
+"9,G,100,0"
+
+echo
+echo Update Power devices
+curl -X POST "http://localhost:5050/api/v1/devices/status-updates/0050" -H "accept: */*" -H "Content-Type: application/json" -d \
+"9,G,1,0.0"
+
+echo
+echo
+echo Device Update complete
+echo
