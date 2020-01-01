@@ -102,6 +102,7 @@ public class HcDeviceDriver<T extends RawStateDto> {
 		status.setRawUpdate(reportedState);
 		status.setEventType("UPDATE");
 		status.setAddress(address);
+		status.setIpAddress(ipAddress);
 	}
 	
 	protected T convertRaw(String reportedState, RawStateDto obj) throws RawStatusException {
