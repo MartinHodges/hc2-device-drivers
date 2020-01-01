@@ -10,7 +10,7 @@ curl -X POST "http://localhost:5050/api/v1/devices/status-updates/0020" -H "acce
 echo
 echo Update Temperature devices
 curl -X POST "http://localhost:5050/api/v1/devices/status-updates/0030" -H "accept: */*" -H "Content-Type: application/json" -d \
-"9,G,0,23.5"
+"9,G,235,0"
 
 echo
 echo Update Light devices
