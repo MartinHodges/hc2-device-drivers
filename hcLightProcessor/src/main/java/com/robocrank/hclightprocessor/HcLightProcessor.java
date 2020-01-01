@@ -32,7 +32,7 @@ public class HcLightProcessor implements HcProcessor {
 	public List<ProcessorEvent> processEvent(ProcessorEvent statusUpdate) {
 		log.debug("Processing light change");
 		double limit = Float.valueOf(config.get("limit"));
-		ProcessorEvent response = new ProcessorEvent("DAY_TIME", new EventPayload("Processor", "127.0.0.1", Health.OK, 0,0.0));
+		ProcessorEvent response = new ProcessorEvent("DAY_TIME", new EventPayload("Processor", "127.0.0.1", 9, Health.OK, 0,0.0));
 		if (statusUpdate.getPayload().getRealMeasurement() < limit) {
 			log.info("It is dark");
 			status.setLight(false);

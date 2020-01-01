@@ -31,7 +31,7 @@ public class HcDayTimeProcessor implements HcProcessor {
 	@Override
 	public List<ProcessorEvent> processEvent(ProcessorEvent statusUpdate) {
 		log.debug("Processing day time change");
-		ProcessorEvent response = new ProcessorEvent("HC_CONTROL", new EventPayload("Outdoor Light Switch", "127.0.0.1", Health.OK, 0,0.0));
+		ProcessorEvent response = new ProcessorEvent("HC_CONTROL", new EventPayload("Outdoor Light Switch", "127.0.0.1", 9, Health.OK, 0,0.0));
 		if (statusUpdate.getPayload().getStatus() == 0) {
 			log.info("It is nighttime");
 			status.setDaytime(false);
