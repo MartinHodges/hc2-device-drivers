@@ -26,6 +26,7 @@ public class DeviceStatus {
 	public DeviceStatus(String address,	String ipAddress, Health statusHealth, int powerHealth, int status, double realMeasurement, boolean enabled, boolean locked, String eventType, String rawUpdate) {
 		this.address = address;
 		this.ipAddress = ipAddress;
+		this.powerHealth = powerHealth;
 		this.statusHealth = statusHealth;
 		this.status = status;
 		this.realMeasurement = realMeasurement;
@@ -33,5 +34,6 @@ public class DeviceStatus {
 		this.locked = locked;
 		this.eventType = eventType;
 		this.rawUpdate = rawUpdate;
-	}	
+	}
+
 }
