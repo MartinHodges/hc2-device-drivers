@@ -16,7 +16,7 @@ public class HcTemperatureDevice extends HcDeviceDriver<RawStateDto> {
 		try {
 			this.ipAddress = ipAddress;
 			convertRaw(reportedStatus);
-			status.setRealMeasurement((double)status.getStatus()/100.0);
+			status.setRealMeasurement((double)status.getStatus()/10.0);
 			// act as proxy - send to original HomeCentre server 
 			send("homecentre.b30","8080","HomeCentre/TempStatus","battery=2200&address="+config.getAddress()+"&temp="+status.getStatus());
 		} catch (RawStatusException e) {
