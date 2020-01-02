@@ -36,5 +36,5 @@ curl -X POST "http://localhost:5050/device-types" -H "accept: */*" -H "Content-T
 
 echo
 echo
-echo Driver set up complete
+echo Driver driver set up complete
 echo

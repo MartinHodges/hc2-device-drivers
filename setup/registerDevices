@@ -36,5 +36,5 @@ curl -X POST "http://localhost:5050/api/v1/devices" -H "accept: */*" -H "Content
 
 echo
 echo
-echo Device set up complete
+echo Device registration set up complete
 echo

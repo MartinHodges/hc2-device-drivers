@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo
+echo Setting up processor drivers
+echo
+echo Set up Day Time processor driver
+curl -X POST "http://localhost:5050/processor-type" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"processorClass\": \"com.robocrank.hcdaytimeprocessor.HcDayTimeProcessor\",\
+\"processorLocation\": \"hcDayTimeProcessor/target/hcDayTimeProcessor-0.0.1-SNAPSHOT.jar\",\
+\"type\": \"dayTimeProcessor\"\
+}"
+
+echo
+echo Set up Light processor driver
+curl -X POST "http://localhost:5050/processor-type" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"processorClass\": \"com.robocrank.hclightprocessor.HcLightProcessor\",\
+\"processorLocation\": \"hcLightProcessor/target/hcLightProcessor-0.0.1-SNAPSHOT.jar\",\
+\"type\": \"lightProcessor\"\
+}"
+
+echo
+echo
+echo Processor driver set up complete
+echo

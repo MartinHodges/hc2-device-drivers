@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo
+echo Setting up processor registration
+echo
+echo Set up Daylight processor
+curl -X POST "http://localhost:5050/processor" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"config\": { \"limit\": \"1\" }, \
+\"name\": \"daylight\", \
+\"type\": \"lightProcessor\" \
+}"
+
+
+echo
+echo Set up Daytime processor
+curl -X POST "http://localhost:5050/processor" -H "accept: */*" -H "Content-Type: application/json" -d \
+"{ \
+\"config\": { }, \
+\"name\": \"dayTime\", \
+\"type\": \"dayTimeProcessor\" \
+}"
+
+
+echo
+echo
+echo Processor registration up complete
+echo
